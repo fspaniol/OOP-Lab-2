@@ -1,8 +1,13 @@
-package model;
+package controller;
 import java.util.Collections;
 
 //isa
 import java.util.ArrayList;
+
+import model.Lecturer;
+import model.Person;
+import model.Professor;
+import model.Student;
 
 public class Main {
 
