@@ -1,8 +1,8 @@
 package controller;
-import java.util.Collections;
-
 //isa
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import model.Lecturer;
 import model.Person;
@@ -22,19 +22,20 @@ public class Main {
 		persons.add(new Lecturer("White", "Sow", "Fairy Ln 1", "0612345678", "0123"));
 		persons.add(new Student("Malik", "Charlie", "York Rd 27", "0612345678", "1011121"));
 		persons.add(new Professor("Spaniol", "Fernando", "Moesstraat", "0612345678", "0123", "Dr."));
-		persons.add(new Professor("Possebon", "Isadora", "Winshortediep", "0612345678", "1011121", "Dr."));
+		persons.add(new Professor("Possebon", "Isadora", "Winschortediep", "0612345678", "1011121", "Dr."));
+		persons.add(new Professor("Alles", "Guilherme", "Winschoterdiep", "0632323230", "88732", "Dr."));
 		
 		for (Person person : persons) {
 			System.out.println(person.toString());
 		}
 		
-		/*System.out.println("\nafter sorting:\n");
+		System.out.println("\nafter sorting:\n");
 
-		Collections.sort(persons);
+		Collections.sort(persons, new Person.FirstNameComparator());
 
 		for (Person person : persons) {
 			System.out.println(person);
-		}*/
+		}
 	}
 
 }

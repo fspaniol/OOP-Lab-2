@@ -1,7 +1,9 @@
 package model;
 
+import java.util.Comparator;
+
 //isa
-public abstract class Person {
+public abstract class Person implements Comparable<Person>{
 
 	private String name;
 	private String firstName;
@@ -14,7 +16,6 @@ public abstract class Person {
 		this.address = address;
 		this.phonenumber = phonenumber;
 	}
-
 
 	public String getName() {
 		return name;
@@ -49,16 +50,7 @@ public abstract class Person {
 	{
 		this.phonenumber = phonenumber;
 	}
-	
-	public int CompareTo(Person other)
-	{
-		String aux1 = this.getName();
-		String aux2 = other.getName();
-		int aux3 = aux1.compareTo(aux2);
 		
-		return aux3;		
-	}
-	
 	public String concat(String... strings)
 	{
 		String aux = strings[1];
@@ -69,5 +61,41 @@ public abstract class Person {
 		}
 		
 		return aux;
+	}
+	
+	// Returns 1 if the person should go after the other, -1 if before, and 0 if they should be at the same spot.
+	public int compareTo (Person other)
+	{
+		if (this.name.compareTo(other.getName()) > 0)
+		{
+			return 1;
+		}
+		else if (this.name.compareTo(other.getName()) < 0)
+		{
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}	
+	
+	public static class FirstNameComparator implements Comparator<Person>
+	{
+		public int compare (Person person1, Person person2)
+		{
+			if (person1.getFirstName().compareTo(person2.getFirstName()) > 0)
+			{
+				return 1;
+			}
+			else if (person1.getFirstName().compareTo(person2.getFirstName()) < 0)
+			{
+				return -1;
+			}
+			else
+			{
+				return 0;
+			}
+		}
 	}
 }

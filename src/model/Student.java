@@ -10,7 +10,6 @@ public class Student extends Person {
 		this.studentNumber = studentNumber;
 	}
 
-
 	public String getStudentNumber() {
 		return studentNumber;
 	}
@@ -23,14 +22,4 @@ public class Student extends Person {
 	{
 		return this.concat(" ",this.getFirstName(),this.getName(), this.studentNumber,this.getPhoneNumber());
 	}
-	
-	public int CompareTo(Person other)
-	{
-		String aux1 = this.getName();
-		String aux2 = other.getName();
-		int aux3 = aux1.compareTo(aux2);
-		
-		return aux3;		
-	}
-	
 }
