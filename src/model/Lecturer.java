@@ -1,6 +1,5 @@
 package model;
 
-//isa
 public class Lecturer extends Person{
 
 	private String employeeNumber;

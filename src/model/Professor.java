@@ -1,5 +1,4 @@
 package model;
-//isa
 
 public class Professor extends Lecturer {
 	private String title;
